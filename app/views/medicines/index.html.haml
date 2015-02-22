@@ -1,0 +1,22 @@
+%h1
+  Medicines
+
+%p= link_to 'Create a new medicine', new_medicine_path
+
+- if @medicines.present?
+  %table{ class: 'table' }
+    %tr
+      %th
+        Medicine
+      %th
+        Minimum
+      %th
+        Actions
+    - @medicines.each do |medicine|
+      %tr
+        %td= medicine.name
+        %td= medicine.min
+        %td
+          = link_to 'edit', edit_medicine_path(medicine)
+          = link_to 'destroy', medicine_path(medicine), method: :delete
+
