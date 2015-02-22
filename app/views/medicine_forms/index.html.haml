@@ -1,0 +1,27 @@
+%h1
+  Storage
+
+%p= link_to 'Create a new medicine form', new_medicine_form_path
+
+- if @medicine_forms.present?
+  %table{ class: 'table' }
+    %tr
+      %th
+        Medicine
+      %th
+        Form
+      %th
+        Price
+      %th
+        Quantity on storage
+      %th
+        Actions
+    - @medicine_forms.each do |medicine_form|
+      %tr
+        %td= medicine_form.medicine.try(:name)
+        %td= medicine_form.form.try(:name)
+        %td= medicine_form.price
+        %td= medicine_form.quantity_storage
+        %td
+          = link_to 'edit', edit_medicine_form_path(medicine_form)
+          = link_to 'destroy', medicine_form_path(medicine_form), method: :delete

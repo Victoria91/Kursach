@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  medicine_id: 
+  form_id: 
+  price: 1
+  quantity_pack: 1
+  quantity_storage: 1
+
+two:
+  medicine_id: 
+  form_id: 
+  price: 1
+  quantity_pack: 1
+  quantity_storage: 1

@@ -1,0 +1,2 @@
+module MedicineFormsHelper
+end

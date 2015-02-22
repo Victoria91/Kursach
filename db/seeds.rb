@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+puts 'Creating forms...'
+forms = Form.first_or_create([
+  { name: 'Капсулы' },
+  { name: 'Таблетки' },
+  { name: 'Пилюли' },
+  { name: 'Раствор' }
+])

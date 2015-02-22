@@ -4,8 +4,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-  resources :medicines
-  resources :sales
+  resources :medicines, :sales, :medicine_forms
   root 'medicines#index'
 
   # Example of regular route:

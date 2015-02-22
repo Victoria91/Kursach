@@ -1,0 +1,8 @@
+= simple_form_for(@medicine_form) do |f|
+  = f.association :medicine
+  = f.association :form
+  = f.input :price, input_html: {min: "1"}
+  = f.input :quantity_pack, input_html: {min: "5"}
+  = f.input :quantity_storage, input_html: {min: "1"}
+  %br
+  = f.button :submit
