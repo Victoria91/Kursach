@@ -1,4 +1,5 @@
 class MedicinesController < ApplicationController
+  before_action :load_medicine, only: [:edit, :update, :destroy]
   def index
     @medicines = Medicine.all
   end
@@ -17,11 +18,9 @@ class MedicinesController < ApplicationController
   end
 
   def edit
-    @medicine = Medicine.find(params[:id])
   end
 
   def update
-    @medicine = Medicine.find(params[:id])
     @medicine.update(medicine_params)
     if @medicine.save
       redirect_to medicines_path, notice: 'Medicine has been updated'
@@ -31,7 +30,6 @@ class MedicinesController < ApplicationController
   end
 
   def destroy
-    @medicine = Medicine.find(params[:id])
     @medicine.destroy
     redirect_to medicines_path, notice: 'Medicine has been deleted'
   end
@@ -39,5 +37,9 @@ class MedicinesController < ApplicationController
   private
   def medicine_params
     params.require(:medicine).permit(:name, :min)
+  end
+
+  def load_medicine
+    @medicine = Medicine.find(params[:id])
   end
 end

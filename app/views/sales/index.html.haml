@@ -1,0 +1,24 @@
+%h1
+  Sales
+
+%p= link_to 'Create a new sale', new_sale_path
+
+- if @sales.present?
+  %table{ class: 'table' }
+    %tr
+      %th
+        Sale
+      %th
+        Address
+      %th
+        Bank Rekvisits
+      %th
+        Actions
+    - @sales.each do |sale|
+      %tr
+        %td= sale.name
+        %td= sale.address
+        %td= sale.bank_rekv
+        %td
+          = link_to 'edit', edit_sale_path(sale)
+          = link_to 'destroy', sale_path(sale), method: :delete
