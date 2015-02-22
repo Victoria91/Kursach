@@ -36,7 +36,7 @@ class MedicinesController < ApplicationController
 
   private
   def medicine_params
-    params.require(:medicine).permit(:name, :min)
+    params.require(:medicine).permit(:name, :min, :sale_id)
   end
 
   def load_medicine

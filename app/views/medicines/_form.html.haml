@@ -1,5 +1,6 @@
 = simple_form_for(@medicine) do |f|
   = f.input :name
   = f.input :min, input_html: {min: "1"}
+  = f.association :sale
   %br
   = f.button :submit
