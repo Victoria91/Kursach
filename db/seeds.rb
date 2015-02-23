@@ -14,3 +14,8 @@ forms = Form.first_or_create([
   { name: 'Пилюли' },
   { name: 'Раствор' }
 ])
+sales = Sale.first_or_create([
+  { name: 'Фармамед ООО' },
+  { name: 'ADVANCE PHARMA GMBH' },
+  { name: 'Аквион ЗАО' }
+])

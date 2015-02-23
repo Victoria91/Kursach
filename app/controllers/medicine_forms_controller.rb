@@ -12,7 +12,7 @@ class MedicineFormsController < ApplicationController
   def create
     @medicine_form = MedicineForm.new(medicine_form_params)
     if @medicine_form.save
-      redirect_to medicine_forms_path, notice: 'New medicine_form has been saved'
+      redirect_to medicine_forms_path, notice: 'New medicine form has been saved'
     else
       render :new
     end
@@ -24,7 +24,7 @@ class MedicineFormsController < ApplicationController
   def update
     @medicine_form.update(medicine_form_params)
     if @medicine_form.save
-      redirect_to medicine_forms_path, notice: 'Medicine_form has been updated'
+      redirect_to medicine_forms_path, notice: 'Medicine form has been updated'
     else
       render :edit
     end
@@ -32,7 +32,7 @@ class MedicineFormsController < ApplicationController
 
   def destroy
     @medicine_form.destroy
-    redirect_to medicine_forms_path, notice: 'Medicine_form has been deleted'
+    redirect_to medicine_forms_path, notice: 'Medicine form has been deleted'
   end
 
   private
