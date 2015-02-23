@@ -31,6 +31,8 @@ gem 'simple_form'
 
 gem 'haml-rails', '~> 0.8'
 
+gem 'chosen-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

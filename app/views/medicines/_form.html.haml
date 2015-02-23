@@ -2,5 +2,9 @@
   = f.input :name
   = f.input :min, input_html: {min: "1"}
   = f.association :sale
+  = f.association :replacements, 
+                  collection: Medicine.all,
+                  include_blank: true,
+                  input_html: { class: 'chosen-select' }
   %br
   = f.button :submit

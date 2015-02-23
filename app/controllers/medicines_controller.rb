@@ -23,7 +23,7 @@ class MedicinesController < ApplicationController
   def update
     @medicine.update(medicine_params)
     if @medicine.save
-      redirect_to medicines_path, notice: 'Medicine has been updated'
+      redirect_to medicines_path, notice: "Medicine '#{@medicine.name}' has been updated"
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class MedicinesController < ApplicationController
 
   private
   def medicine_params
-    params.require(:medicine).permit(:name, :min, :sale_id)
+    params.require(:medicine).permit(:name, :min, :sale_id, replacement_ids: [])
   end
 
   def load_medicine
