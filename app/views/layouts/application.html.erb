@@ -24,6 +24,7 @@
               <li <%= 'class=active' if controller_name == 'medicines' %> ><%= link_to 'Medicine', medicines_path %></li>
               <li <%= 'class=active' if controller_name == 'sales' %> ><%= link_to 'Sales', sales_path %></li>
               <li <%= 'class=active' if controller_name == 'medicine_forms' %>><%= link_to 'Storage', medicine_forms_path %></li>
+              <li <%= 'class=active' if controller_name == 'reports' %>><%= link_to 'Order for sales', reports_sale_path %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
               <li><a href="#">Login</a></li>

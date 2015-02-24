@@ -1,0 +1,8 @@
+- @sale_order.group_by(&:sale).each do |sale, orders|
+  %h3
+    %i
+      Order for
+    =link_to sale.name, sale_path(sale)
+  - orders.each do |order|
+    %h4=order.name
+  %hr
