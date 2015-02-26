@@ -1,5 +1,5 @@
 class SalesController < ApplicationController
-  before_action :load_sale, only: [:edit, :update, :destroy]
+  before_action :load_sale, except: [:index, :new, :create]
   
   def index
     @sales = Sale.all
@@ -19,6 +19,9 @@ class SalesController < ApplicationController
   end
 
   def edit
+  end
+
+  def show
   end
 
   def update

@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
   def sale
-    @sale_order = Medicine.orders
+    @sale_order = MedicineForm.order_for_sale
   end
 
   def histogram

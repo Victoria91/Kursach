@@ -1,0 +1,16 @@
+%h2= @sale.name
+%h3
+  %i 
+    Address:
+  = @sale.address
+  %br
+  %i
+    Bank Rekvisits:
+  = @sale.bank_rekv
+  %br
+  %i
+    %p
+      Assortiment:
+  %ul
+    - @sale.medicines.each do |medicine|
+      %li=medicine.name

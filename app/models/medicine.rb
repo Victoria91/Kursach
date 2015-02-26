@@ -10,7 +10,7 @@ class Medicine < ActiveRecord::Base
   has_many :inverse_replacements, :class_name => "MedicineReplace", :foreign_key => "replacement_id"
   has_many :replacements, :through => :inverse_replacements, :source => :medicine
 
-  scope :orders, -> { joins(:medicine_forms).where('medicines.min >= medicine_forms.quantity_storage') }
+  # scope :orders, -> { joins(:medicine_forms).where('medicines.min >= medicine_forms.quantity_storage') }
 end
 
 

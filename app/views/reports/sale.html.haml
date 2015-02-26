@@ -1,8 +1,25 @@
-- @sale_order.group_by(&:sale).each do |sale, orders|
+- @sale_order.group_by { |m| m.medicine.sale }.each do |sale, medicine_forms|
   %h3
     %i
       Order for
     =link_to sale.name, sale_path(sale)
-  - orders.each do |order|
-    %h4=order.name
+  %table{class: 'table'}
+    %tr
+      %th
+        '#'
+      %th 
+        Medicine
+      %th
+        Medicine form
+      %th
+        Quantity min
+      %th
+        Quantity on storage
+    - medicine_forms.each_with_index do |medicine_form, index|
+      %tr
+        %td=index.next
+        %td=medicine_form.medicine.name
+        %td=medicine_form.form.name
+        %td=medicine_form.medicine.min
+        %td=medicine_form.quantity_storage
   %hr
