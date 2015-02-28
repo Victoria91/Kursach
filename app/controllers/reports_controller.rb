@@ -5,4 +5,8 @@ class ReportsController < ApplicationController
 
   def histogram
   end
+
+  def index
+    @medicine_forms = MedicineForm.all
+  end
 end

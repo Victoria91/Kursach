@@ -1,0 +1,13 @@
+%h1
+  Depot
+%hr
+- @medicine_forms.each do |medicine_form|
+  %h2= medicine_form.medicine.name + ', ' + medicine_form.form.name
+  %h4
+    Price:
+    = medicine_form.price
+    rub.
+  %h5
+    = medicine_form.medicine.sale.name
+  %input{ class: 'btn', value: 'Buy', name: 'commit', type: 'submit'}
+  %hr
