@@ -9,5 +9,5 @@
     rub.
   %h5
     = medicine_form.medicine.sale.name
-  %input{ class: 'btn', value: 'Buy', name: 'commit', type: 'submit'}
+  = button_to 'Buy', buy_medicine_form_path(medicine_form), class: 'btn'
   %hr

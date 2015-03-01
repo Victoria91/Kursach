@@ -60,8 +60,14 @@ GEM
       sass (~> 3.2.19)
     compass-rails (2.0.0)
       compass (>= 0.12.2)
+    diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.3.0)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
+      railties (>= 3.0.0)
     fssm (0.2.10)
     haml (4.0.6)
       tilt
@@ -122,6 +128,22 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    rspec-core (3.0.3)
+      rspec-support (~> 3.0.0)
+    rspec-expectations (3.0.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.0.0)
+    rspec-mocks (3.0.3)
+      rspec-support (~> 3.0.0)
+    rspec-rails (3.0.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.0.0)
+      rspec-expectations (~> 3.0.0)
+      rspec-mocks (~> 3.0.0)
+      rspec-support (~> 3.0.0)
+    rspec-support (3.0.3)
     ruby_parser (3.6.4)
       sexp_processor (~> 4.1)
     sass (3.2.19)
@@ -167,11 +189,13 @@ PLATFORMS
 DEPENDENCIES
   chosen-rails
   coffee-rails (~> 4.0.0)
+  factory_girl_rails
   haml-rails (~> 0.8)
   jbuilder (~> 2.0)
   jquery-rails
   pg
   rails (= 4.1.4)
+  rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   simple_form

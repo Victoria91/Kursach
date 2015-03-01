@@ -1,5 +1,5 @@
 class MedicineFormsController < ApplicationController
-  before_action :load_medicine_form, only: [:edit, :update, :destroy]
+  before_action :load_medicine_form, except: [:index, :new, :create]
   
   def index
     @medicine_forms = MedicineForm.all
@@ -28,6 +28,10 @@ class MedicineFormsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def buy
+    @medicine_form.buy! if @medicine_form.quantity_storage > 0
   end
 
   def destroy

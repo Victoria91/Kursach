@@ -10,7 +10,13 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-  resources :medicines, :sales, :medicine_forms
+  resources :medicines, :sales
+  resources :medicine_forms do
+    member do
+      post :buy
+    end
+  end
+  
   root 'reports#index'
 
   # Example of regular route:
