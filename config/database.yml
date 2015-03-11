@@ -23,7 +23,7 @@ default: &default
 
 local: &local
   username: vbykova
-  password: v217V2580v
+  password: v217v2580v
   host: localhost
 
 development:

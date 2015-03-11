@@ -1,13 +1,23 @@
 %h1
   Depot
-%hr
 - @medicine_forms.each do |medicine_form|
-  %h2= medicine_form.medicine.name + ', ' + medicine_form.form.name
+  %hr
+  %h2{id: medicine_form.medicine.id }= medicine_form.medicine.name + ', ' + medicine_form.form.name
   %h4
     Price:
     = medicine_form.price
     rub.
   %h5
     = medicine_form.medicine.sale.name
-  = button_to 'Buy', buy_medicine_form_path(medicine_form), class: 'btn'
-  %hr
+  - if medicine_form.quantity_storage > 0
+    = button_to 'Buy', buy_medicine_form_path(medicine_form), class: 'btn'
+  - else
+    = button_to 'Buy', buy_medicine_form_path(medicine_form), class: 'btn disabled'
+    %p
+    Not available.
+    - if medicine_form.medicine.replacements.present?
+      You can choose one of replaces:
+      - medicine_form.medicine.replacements.each_with_index do |replacement, index|
+        %a{href: "##{replacement.id}" }= replacement.name  
+        -if index < medicine_form.medicine.replacements.count - 1
+          ,
