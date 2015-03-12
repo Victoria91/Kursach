@@ -31,7 +31,7 @@ class MedicineFormsController < ApplicationController
   end
 
   def buy
-    @medicine_form.buy! if @medicine_form.quantity_storage > 0
+    @medicine_form.buy!
   end
 
   def destroy
