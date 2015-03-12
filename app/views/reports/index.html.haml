@@ -10,14 +10,16 @@
   %h5
     = medicine_form.medicine.sale.name
   - if medicine_form.quantity_storage > 0
-    = button_to 'Buy', buy_medicine_form_path(medicine_form), class: 'btn'
+    = button_to 'Buy', buy_medicine_form_path(medicine_form), class: 'btn', id: "buy_#{medicine_form.id}", remote: true
   - else
-    = button_to 'Buy', buy_medicine_form_path(medicine_form), class: 'btn disabled'
+    = button_to 'Buy', buy_medicine_form_path(medicine_form), class: 'btn disabled', id: "buy_#{medicine_form.id}", remote: true
     %p
-    Not available.
+      %span{class: "label label-warning"}
+        Not available.
     - if medicine_form.medicine.replacements.present?
-      You can choose one of replaces:
-      - medicine_form.medicine.replacements.each_with_index do |replacement, index|
-        %a{href: "##{replacement.id}" }= replacement.name  
-        -if index < medicine_form.medicine.replacements.count - 1
-          ,
+      .text-warning
+        You can choose one of replaces:
+        - medicine_form.medicine.replacements.each_with_index do |replacement, index|
+          %a{href: "##{replacement.id}" }= replacement.name  
+          - if index < medicine_form.medicine.replacements.count - 1
+            ,

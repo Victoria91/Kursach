@@ -1,0 +1,8 @@
+var button = $('#buy_<%= @medicine_form.id %>');
+<% if @medicine_form.quantity_storage > 0 %>
+  button.after('<div><span class="label label-success">Your order has been made</span></div>');
+  $('.label-success').animate({ opacity: "hide" }, 2000);
+<% else %>
+  button.addClass('disabled');
+  button.after('<div><span class="label label-warning">Not available</span></div>');
+<% end %>

@@ -5,6 +5,8 @@ class MedicineForm < ActiveRecord::Base
 
   validates :medicine, :form, presence: true
 
+  default_scope { order :created_at }
+
   scope :order_for_sale, -> { joins(:medicine).where('medicines.min >= medicine_forms.quantity_storage') }
 
   def buy!
