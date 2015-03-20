@@ -1,0 +1,17 @@
+%h1
+  Medicines left on storage
+
+- if @left_on_storage.present?
+  %table{ class: 'table' }
+    %tr
+      %th
+        Medicine
+      %th
+        Sale
+      %th
+        Left on storage
+    - @left_on_storage.each do |medicine_form|
+      %tr
+        %td= medicine_form.medicine.name
+        %td= medicine_form.medicine.sale.name
+        %td= medicine_form.quantity_storage

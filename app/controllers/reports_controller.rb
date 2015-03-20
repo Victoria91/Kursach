@@ -9,4 +9,8 @@ class ReportsController < ApplicationController
   def index
     @medicine_forms = MedicineForm.all
   end
+
+  def left_on_storage
+    @left_on_storage = MedicineForm.left_on_storage
+  end
 end
