@@ -1,0 +1,8 @@
+<%= jqplot 500, 600, [@hash.to_a] , 
+         :axes => {
+           :xaxis => {:min => 0, :max => 20, :ticks => @months.to_a }, 
+           :yaxis => {:min => 0, :ticks => [[0,'0'],[10,'10'],[20,'20']]} 
+         },
+         :title => 'Month Reports',
+         :axesDefaults => {:tickOptions => {:showGridline => false}},
+         :grid => {:shadow => false, :drawGridLines => false}  %>    
