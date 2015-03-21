@@ -4,8 +4,11 @@ class ReportsController < ApplicationController
   end
 
   def histogram
-    #@dates = Order.all.map { |order| order.created_at.month }
     @hash = Order.group('EXTRACT (MONTH from "created_at")').count
+    count_dec = @hash.delete(12.0)
+    @hash[0.0] = count_dec
+    counts = @hash.map { |k,v| v }
+    @max = counts.max
     @months = {}
     (0..4).each do |i|
       @months[i] = (Time.now - (3 - i).month).strftime('%B')

@@ -18,7 +18,10 @@ puts 'Creating Sales...'
 sales = Sale.first_or_create([
   { name: 'Фармамед ООО' },
   { name: 'ADVANCE PHARMA GMBH' },
-  { name: 'Аквион ЗАО' }
+  { name: 'OLAINFARM' },
+  { name: 'Аквион ЗАО' },
+  { name: 'МАКИЗ-ФАРМА,ООО' },
+  { name: 'ТЕВА'}
 ])
 puts 'Creating Medicines...'
 sales = Medicine.first_or_create([
@@ -26,5 +29,60 @@ sales = Medicine.first_or_create([
   { name: 'Луцетам', min: 2, sale: Sale.first },
   { name: 'Терафлю', min: 2, sale: Sale.last },
   { name: 'Йодомарин', min: 10, sale: Sale.first },
-  { name: 'Пиковит', min: 5, sale: Sale.last }
+  { name: 'Пиковит', min: 5, sale: Sale.last },
+  { name: 'АДАПТОЛ', min: 2, sale: Sale.last },
+  { name: 'АКАТИНОЛ МЕМАНТИН 0,01 ', min: 5, sale: Sale.first }
+])
+puts 'Creating orders'
+orders = Order.create([
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 2.month },
+  { created_at: Time.now - 2.month },
+  { created_at: Time.now - 2.month },
+  { created_at: Time.now - 2.month },
+  { created_at: Time.now - 2.month },
+  { created_at: Time.now - 2.month },
+  { created_at: Time.now - 2.month },
+  { created_at: Time.now - 2.month },
+  { created_at: Time.now - 2.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 1.month },
+  { created_at: Time.now - 1.month },
+  { created_at: Time.now - 1.month },
+  { created_at: Time.now - 1.month },
+  { created_at: Time.now - 1.month },
+  { created_at: Time.now - 1.month },
+  { created_at: Time.now - 1.month },
+  { created_at: Time.now - 1.month },
+  { created_at: Time.now - 1.month },
+  { created_at: Time.now - 1.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month },
+  { created_at: Time.now - 3.month }
 ])
