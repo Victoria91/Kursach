@@ -3,7 +3,7 @@ class MedicineForm < ActiveRecord::Base
   belongs_to :form
   has_many :orders
 
-  validates :medicine, :form, presence: true
+  validates :medicine, :form, :price, presence: true
 
   default_scope { order :created_at }
 

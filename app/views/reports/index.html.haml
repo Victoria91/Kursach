@@ -9,7 +9,7 @@
     rub.
   %h5
     = medicine_form.medicine.sale.name
-  - if medicine_form.quantity_storage > 0
+  - if medicine_form.quantity_storage.to_i > 0
     = button_to 'Buy', buy_medicine_form_path(medicine_form), class: 'btn', id: "buy_#{medicine_form.id}", remote: true
   - else
     = button_to 'Buy', buy_medicine_form_path(medicine_form), class: 'btn disabled', id: "buy_#{medicine_form.id}", remote: true
