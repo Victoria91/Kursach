@@ -2,7 +2,7 @@ class MedicineFormsController < ApplicationController
   before_action :load_medicine_form, except: [:index, :new, :create]
   
   def index
-    @medicine_forms = MedicineForm.all
+    @medicine_forms = MedicineForm.find_by_sql 'SELECT "medicine_forms".* FROM "medicine_forms"'
   end
 
   def new
@@ -45,6 +45,6 @@ class MedicineFormsController < ApplicationController
   end
 
   def load_medicine_form
-    @medicine_form = MedicineForm.find(params[:id])
+    @medicine_form = MedicineForm.find_by_sql(['SELECT  "medicine_forms".* FROM "medicine_forms"  WHERE "medicine_forms"."id" = ?', params[:id]]).first
   end
 end
