@@ -26,7 +26,8 @@
               <li <%= 'class=active' if controller_name == 'medicine_forms' %>><%= link_to 'Storage', medicine_forms_path %></li>
               <li <%= 'class=active' if action_name == 'sale' %>><%= link_to 'Order for sales', reports_sale_path %></li>
               <li <%= 'class=active' if action_name == 'left_on_storage' %>><%= link_to 'Left on storage', reports_left_on_storage_path %></li>
-          </ul>
+              <li <%= 'class=active' if action_name == 'histogram' %>><%= link_to 'Month reports', reports_histogram_path %></li>
+         </ul>
           <ul class="nav navbar-nav navbar-right">
               <li><a href="#">Login</a></li>
           </ul>

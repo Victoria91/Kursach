@@ -33,6 +33,9 @@ gem 'haml-rails', '~> 0.8'
 
 gem 'chosen-rails'
 
+gem 'jqplot-rails'
+
+gem 'jquery-turbolinks'
 
 group :test do
   gem 'factory_girl_rails'
