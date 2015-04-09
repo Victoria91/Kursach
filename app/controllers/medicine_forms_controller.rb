@@ -39,7 +39,7 @@ class MedicineFormsController < ApplicationController
   end
 
   def destroy
-    @medicine_form.destroy
+    ActiveRecord::Base.connection.execute(%Q(DELETE from "medicine_forms" WHERE "medicine_forms"."id" = '#{@medicine_form.id}'))
     redirect_to medicine_forms_path, notice: 'Medicine form has been deleted'
   end
 
